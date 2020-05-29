@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lin.inject.core">
+
+    <application>
+        <provider
+            android:name=".core.XInjectProvider"
+            android:authorities="com.lin.inject.provider"
+            android:enabled="true"
+            android:exported="false"/>
+    </application>
+
+</manifest>
