@@ -5,7 +5,9 @@ import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 
+import com.lin.inject.core.core.executor.XInjectExecutor;
 import com.lin.inject.core.util.XInjectUtils;
 
 import java.util.Objects;
@@ -14,7 +16,7 @@ import java.util.Objects;
  *     author : 林熠贤
  *     e-mail : linyixianwork@163.com
  *     time   : 2020/1/28
- *     desc   : 
+ *     desc   : 为初始化提供触发契机的内容提供者
  *     version: 1.0
  * </pre>
  */
@@ -27,6 +29,7 @@ public class XInjectProvider extends ContentProvider {
      */
     @Override
     public boolean onCreate() {
+        Log.d("onCreate", "XInjectProvider");
         Application application = (Application) Objects.requireNonNull(getContext()).getApplicationContext();
         XInjectUtils.readFile2Cache(application);
         XInjectExecutor.init().invokeAllXInjectExecute(application);

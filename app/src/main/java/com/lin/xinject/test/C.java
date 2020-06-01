@@ -14,7 +14,7 @@ import com.lin.inject.annotation.XInject;
  *     version: 1.0
  * </pre>
  */
-@XInject(id = "c", group = "app")
+@XInject(name = "c", group = "app",priority = 3,inMainThread = false)
 public class C extends A {
 
     void ccc() {

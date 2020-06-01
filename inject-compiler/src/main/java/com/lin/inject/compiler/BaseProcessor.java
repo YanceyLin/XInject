@@ -55,9 +55,6 @@ public abstract class BaseProcessor extends AbstractProcessor {
             String tag = typeElement.getQualifiedName().toString();
             data.put(tag,typeElement);
         }
-        //打印出来
-        System.out.println("parseValue :");
-        System.out.println(data.toString());
         return data;
     }
 

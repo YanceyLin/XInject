@@ -12,13 +12,23 @@ import java.lang.annotation.Target;
 public @interface XInject {
 
     /**
-     * 键值
+     * 名称
      */
-    String id() default "";
+    String name() default "";
 
     /**
      * 组别
      */
     String group() default XInjectConstant.LIN_INJECT_GROUP_DEFAULT;
+
+    /**
+     * 优先级（优先级越高，越早执行）
+     */
+    int priority() default 0;
+
+    /**
+     * 是否在主线程里进行
+     */
+    boolean inMainThread() default true;
 
 }

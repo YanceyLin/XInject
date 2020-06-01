@@ -15,7 +15,7 @@ import com.lin.inject.core.bridge.XInjectAppCore;
  *     version: 1.0
  * </pre>
  */
-@XInject(id = "b",group = "app")
+@XInject(name = "b",group = "app",priority = 1,inMainThread = false)
 public class B extends XInjectAppCore {
 
     void bbb(){

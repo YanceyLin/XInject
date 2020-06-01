@@ -18,13 +18,17 @@ public class XInjectMessage {
 
     private String className;
 
-    private Map<String, String> map;
+    private String name;
+    private String group;
+    private int priority;
+    private boolean inMainThread;
 
     public XInjectMessage(String className, XInject xInject) {
         this.className = className;
-        map = new HashMap<>();
-        map.put("id", xInject.id());
-        map.put("group", xInject.group());
+        name = xInject.name();
+        group = xInject.group();
+        priority = xInject.priority();
+        inMainThread = xInject.inMainThread();
     }
 
     public String getClassName() {
@@ -35,11 +39,35 @@ public class XInjectMessage {
         this.className = className;
     }
 
-    public Map<String, String> getMap() {
-        return map;
+    public String getName() {
+        return name;
     }
 
-    public void setMap(Map<String, String> map) {
-        this.map = map;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public boolean isInMainThread() {
+        return inMainThread;
+    }
+
+    public void setInMainThread(boolean inMainThread) {
+        this.inMainThread = inMainThread;
     }
 }
