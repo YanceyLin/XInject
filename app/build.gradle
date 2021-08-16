@@ -26,4 +26,6 @@ dependencies {
 
     api project(':inject-core')
     annotationProcessor project(':inject-compiler')
+
+    api project(":moduleA")
 }

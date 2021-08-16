@@ -1,10 +1,9 @@
-package com.lin.xinject.test;
+package com.lin.test.module.a;
 
 import android.app.Application;
 import android.util.Log;
 
 import com.lin.inject.annotation.XInject;
-import com.lin.inject.core.bridge.XInjectAppCore;
 
 /**
  * <pre>
@@ -15,16 +14,15 @@ import com.lin.inject.core.bridge.XInjectAppCore;
  *     version: 1.0
  * </pre>
  */
+@XInject(name = "c", group = "app",priority = 3,inMainThread = false)
+public class C extends A {
 
-@XInject(name = "a",group = "app",priority = 2,inMainThread = false)
-public class A extends XInjectAppCore {
-
-    void add(){
+    void ccc() {
 
     }
 
     @Override
     protected void onCreate(Application application) {
-        Log.d("XInjectAppCore","A 类调用了，哈哈哈哈哈");
+        Log.d("XInjectAppCore", "*********** C类调用了，======");
     }
 }

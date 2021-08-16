@@ -1,2 +1,2 @@
-include ':app', ':inject-core', ':inject-compiler', ':inject-annotation'
+include ':app' ,':moduleA',':inject-core', ':inject-compiler', ':inject-annotation'
 rootProject.name='XInject'
